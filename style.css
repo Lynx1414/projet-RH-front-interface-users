@@ -1,0 +1,198 @@
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src: url('./assets/Fonts/MontserratAlternates-Regular.otf') format('woff'),
+       url('./assets/Fonts/MontserratAlternates-SemiBold.otf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
+  position: relative;
+  background-color: #F3EDED;
+}
+img{
+  width: 100%;
+}
+/* ___________________header________________________ */
+header{
+  margin: 0.3em 1.5em ;
+}
+
+h1{
+  display: inline-block;
+  margin: 0;
+  padding-left: 0.1em;
+}
+#logo{
+  width: 30%;
+}
+
+.user{
+ text-align: right;
+}
+
+.user >p, img{
+  display: inline-block;
+}
+
+/* ___________________footer________________________ */
+nav{
+  position: static;
+  bottom: 0;
+  margin: 0 1.5em;
+}
+
+#navbar{
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 7px;  
+}
+
+
+/* ___________________main________________________ */
+
+h2{
+  text-align: center;
+  margin: 0;
+}
+
+.container {
+  margin: 1.5em 1em;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.boxProduit {
+  border: 1px solid #2F5C7C;
+  background-color: #2F5C7C;
+  color: #F3EDED;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4%;
+  position: relative;
+}
+
+.boxProduit > img {
+  width: 60%;
+} 
+
+.btnAcheter{
+  border: 1px solid #2F5C7C;
+  border-radius: 11%;
+  width: 60%;
+  color: #2F5C7C;
+  background-color: #F3EDED;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btnAcheter:disabled {
+  cursor:not-allowed;
+}
+
+.btnAjouter{
+  background-color: #2F5C7C;
+  color: #F3EDED;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 1.5em;
+}
+
+.designation{
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 20px;
+}
+
+.epuise{
+  margin-top: 7px;
+  font-size: 20px;
+  color: red;
+  background-color: #F3EDED;
+  font-weight: bold;
+}
+
+.toggle{
+  font-size: 20px;
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+}
+
+.colorToggle{
+  color:#990000;
+}
+
+/* ___________________mainCategory________________________ */
+#sous-titre{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+#sous-titre >h2{
+  letter-spacing: 0.2em;
+}
+
+#searchbar{
+  margin-top: 0.8em;
+  text-align: center;
+  width: 100%;
+}
+
+#searchInput{
+  height: 28px;
+  width: 55%;
+  position: relative;
+}
+
+#searchbar > a{
+  position: absolute;
+  right: 28.5%;
+  padding: 2.5px 0;
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+}
+/* #searchInput.value{
+  text-align: center;
+} */
+
+/*_______________________________MAINchoiceCategory___________________________*/
+h2 >span{
+  letter-spacing: 0.1em;
+}
+
+#viennoiseries, #boissons{
+  text-align: center;
+  margin-top: 1em;
+  letter-spacing: 0.2em;
+}
+
+#boissons{
+  margin-bottom: 1em;
+}
+
+.boxShadow{
+  width: 65%;
+  background-color: #2F5C7C;
+  box-shadow: 0px 2px 4px 2px #2F5C7C;
+  border-radius: 10px;
+}
+

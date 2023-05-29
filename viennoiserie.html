@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viennoiserie</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+</head>
+
+<body>
+  <!-- ___________________header________________________ -->
+  <header>
+    <div id="en-tete">
+      <img id="logo" src="./assets/img/logo.webp" alt="logo">
+      <h1>O'Snack</h1>
+    </div>
+    <div class="user">
+      <p>Kevin CLAUZIER</p>
+      <span><img src="./assets/img/kevin-avatar.webp" alt="user-avatar" style="width: 8%;"></span>
+    </div>
+  </header>
+
+
+
+  <!-- ___________________main________________________  -->
+  <section id="sous-titre">
+    <h2 id="categorie">Viennoiserie</h2>
+    <div id="searchbar">
+      <input data-search type="text" name="searchbar" id="serchInput">
+      <a class="search-link" href="#"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></a>
+    </div>
+  </section>
+
+<!--data-laPartieDuNomDeAttribut est un attribut de données qui permet de stocker des infos suppl -->
+  <main data-produits="viennoiserie">
+  </main>
+
+
+  <!-- ___________________footer________________________  -->
+
+  <nav>
+    <ul id="navbar">
+      <li class="nav-item">
+        <a class="nav-link" href='/home.html'><i class="fa-solid fa-house" style="color: #2f5c7c; font-size: 35px;"></i></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href='/favorits.html'><i class="fa-solid fa-heart"
+            style="color: #2f5c7c; font-size: 35px;"></i></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href='/contact.html'><i class="fa-solid fa-envelope"
+            style="color: #2f5c7c; font-size: 35px;"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+  <script src="script.js" async></script>
+</body>
+
+</html>
