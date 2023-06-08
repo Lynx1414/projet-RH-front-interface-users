@@ -15,14 +15,10 @@
 
 <body>
   <!-- ___________________header________________________ -->
-  <header>
+  <header id="employee-header" data-header="viennoiserie">
     <div id="en-tete">
       <img id="logo" src="./assets/img/logo.webp" alt="logo">
       <h1>O'Snack</h1>
-    </div>
-    <div class="user">
-      <p>Kevin CLAUZIER</p>
-      <span><img src="./assets/img/kevin-avatar.webp" alt="user-avatar" style="width: 8%;"></span>
     </div>
   </header>
 
@@ -47,17 +43,16 @@
   <nav>
     <ul id="navbar">
       <li class="nav-item">
-        <a class="nav-link" href='/home.html'><i class="fa-solid fa-house" style="color: #2f5c7c; font-size: 35px;"></i></a>
+        <a class="nav-link" href='/home.html'><i class="fa-solid fa-house" style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href='/favorits.html'><i class="fa-solid fa-heart"
-            style="color: #2f5c7c; font-size: 35px;"></i></a>
+            style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href='/contact.html'><i class="fa-solid fa-envelope"
-            style="color: #2f5c7c; font-size: 35px;"></i></a>
+        <a onclick= "displayCart()" class="nav-link" href='/contact.html'><a class="nav-link" href='/panier.html'><i class="fa-solid fa-cart-shopping" style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
     </ul>
   </nav>

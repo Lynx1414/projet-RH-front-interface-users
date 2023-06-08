@@ -12,6 +12,7 @@ html, body{
   font-family: 'Montserrat Alternates', sans-serif;
   position: relative;
   background-color: #F3EDED;
+  overflow: scroll;
 }
 img{
   width: 100%;
@@ -38,6 +39,16 @@ h1{
   display: inline-block;
 }
 
+.solde >p{
+  display: block;
+  text-align: right;
+  
+}
+
+.solde >p:first-child{
+  margin-bottom: 0;
+}
+
 /* ___________________footer________________________ */
 nav{
   position: static;
@@ -62,7 +73,7 @@ h2{
   margin: 0;
 }
 
-.container {
+.grid {
   margin: 1.5em 1em;
   display: grid;
   grid-template-columns: repeat(2, 2fr);
@@ -138,6 +149,10 @@ h2{
   color:#990000;
 }
 
+.btnHidden{
+  display: none;
+}
+
 /* ___________________mainCategory________________________ */
 #sous-titre{
   display: flex;
@@ -196,3 +211,48 @@ h2 >span{
   border-radius: 10px;
 }
 
+/*_______________________________MAINcart___________________________*/
+.right{
+  text-align: right;
+  margin-right: 1em;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.right >span{
+  font-weight: normal;
+}
+
+.cartBtn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 25px;
+  box-sizing: border-box;
+}
+
+.actionBtn{
+  border: none;
+  border-radius: 7%;
+  box-shadow: 3px 2px 3px rgba(47, 92, 124, 1.25);
+  margin: 1em 0;
+  background-color: #d1d1d1;
+  opacity: 0.8;
+  color: #2F5C7C;
+  font-weight: 600;
+}
+
+.redCentered{
+  text-align: center;
+  color: #ed1313;
+}
+
+#validateBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.orange{
+  color: orange;
+  font-weight: bold;
+}
