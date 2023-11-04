@@ -3,7 +3,8 @@ const apiConsume = 'http://localhost:8081/api/products/consume';
 const apiCategory = 'http://localhost:8081/api/products/category';
 const apiEmployee = 'http://localhost:8081/api/employee/one';
 
-const idEmployee = 3;
+//pour test avant page connexion
+const idEmployee = 2;// localStorage.getItem('idEmployee');
 
 let main = document.querySelector('main');
 let mainChoices = document.getElementById('choiceGategory');
@@ -27,7 +28,7 @@ async function displayAllProducts() {
       <span class="prix">${article.Prix}€</span>
       <button class="btnAcheter" type= "submit" onclick="consumeOne(${article.ID})">Acheter</button>
       </div><br/>
-      <button class="btnAjouter" type= "submit" onclick="addToCart(${article.ID})">Ajouter au panier</button>
+      
       `
     if (article.Statut == 0 || article.Stock == 0) {
       boxProduit =
@@ -42,6 +43,17 @@ async function displayAllProducts() {
       `
     }
     div.innerHTML = boxProduit;
+    let b = document.createElement('button');
+    b.textContent = "Ajouter au panier";
+    b.classList.add('btnAjouter');
+    b.onclick = function () {
+      addToCart(article);
+    }
+    if (article.Statut == 0 || article.Stock == 0) {
+      b.classList.add('btnHidden');
+    }
+
+    div.appendChild(b);
     main.append(div);
   })
 };
@@ -162,6 +174,7 @@ searchInput.addEventListener('input', function (event) {
     }
     if (article.Statut == 0 || article.Stock == 0) {
       b.classList.add('btnHidden');
+
     }
 
     div.appendChild(b);
@@ -179,6 +192,13 @@ function addToCart(produit) {
   if (lsCart != null) {
     cart = lsCart;
   }
+  // async function consumeOne(id) {
+  //   //défintit le parametre GET 'id' avec "?id="
+  //   let response = await fetch(apiConsume + "?id=" + id);
+  //   let data = await response.json();
+  //   location.reload();
+  // };
+ 
   cart.push(produit);
   localStorage.setItem('panier', JSON.stringify(cart));
   // 'panier' est la key et JSON.stringify(cart) est la value

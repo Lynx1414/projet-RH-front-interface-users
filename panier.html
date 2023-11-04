@@ -17,9 +17,16 @@
 <body>
   <!-- ___________________header________________________ -->
   <header id="employee-header">
-    <div id="en-tete">
-      <img id="logo" src="./assets/img/logo.webp" alt="logo">
-      <h1>O'Snack</h1>
+    <div class="leave-button">
+      <div id="en-tete">
+        <img id="logo" src="./assets/img/logo.webp" alt="logo">
+        <h1 id="panier">O'Snack</h1>
+      </div>
+      <a href="/logout">
+        <button id="leave-button" type="button" class="btn btn-outline-secondary ">
+          <i class="fa-solid fa-right-to-bracket"></i>
+        </button>
+      </a>
     </div>
   </header>
 
@@ -45,11 +52,11 @@
       </div>
     </div>
     <div class="cartBtn">
-      <button onclick="clearCart()"class="actionBtn" >Annuler</button>
+      <button onclick="clearCart()" class="actionBtn">Annuler</button>
       <a href="/home.html">
         <button class="actionBtn">Continuer</button>
       </a>
-      <button id="validateBtn" class="actionBtn" onclick="pay()" >Valider et régler</button>
+      <button id="validateBtn" class="actionBtn" onclick="pay()">Valider et régler</button>
     </div>
   </main>
 
@@ -59,23 +66,26 @@
   <nav>
     <ul id="navbar">
       <li class="nav-item">
-        <a class="nav-link" href='/home.html'><i onclick="clearCart()" class="fa-solid fa-house"
-            style="color: #2f5c7c; font-size: 30px;"></i></a>
+        <a class="nav-link" href='/menu.html'><i class="fa-solid fa-house" style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href='/favorits.html'><i class="fa-solid fa-heart"
             style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href='/contact.html'><a class="nav-link" href='/panier.html'><i class="fa-solid fa-cart-shopping" style="color: #2f5c7c; font-size: 30px;"></i></a>
+        <a onclick="" class="nav-link" href='/'><i class="fa-solid fa-user"
+            style="color: #2f5c7c; font-size: 30px;"></i></a>
+      </li>
+      <li class="nav-item">
+        <a onclick="displayCart()" class="nav-link" href='/panier.html'><i class="fa-solid fa-cart-shopping"
+            style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
     </ul>
   </nav>
 
   <script src="script.js" async></script>
   <script src="scriptPanier.js" async></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

@@ -12,18 +12,19 @@ let total = 0;
 let newSolde;
 let divTotalAmount;
 let fetchedMessage;
+
 document.addEventListener("DOMContentLoaded", displayCart(), false);
 
 function displayCart() {
-  
-  //récupérer le cart
+  //todo1__récupérer le cart from script.js
   cart = JSON.parse(localStorage.getItem('panier'));
   // console.log(JSON.stringify(cart));
+  //todo__récupérer les details employee from script.js
   user = JSON.parse(localStorage.getItem('employee'));
   // console.log(JSON.stringify(user));
   let solde = user.Solde;
   // console.log(solde);
-  
+
   if (cart != null) {
     cart.forEach(produit => {
       let trPanier = document.createElement('tr');
@@ -41,9 +42,8 @@ function displayCart() {
       newSolde = solde - total;
       trPanier.innerHTML = selected;
       tBody.appendChild(trPanier);
-
-      // localStorage.setItem('amount', JSON.stringify(total));
     })
+
     divTotalAmount = document.createElement('div');
     divTotalAmount.classList.add('#totalAmount');
     divTotalAmount.innerHTML = `<p class="right">Total :<span> ${total.toFixed(2)}€</span></p>
@@ -59,71 +59,78 @@ function displayCart() {
       let validateBtn = document.querySelector('#validateBtn');
       validateBtn.setAttribute('disabled', '');
     } 
-
+      
   } else {
-    localStorage.removeItem('panier');
-    tBody.innerHTML = "";
-    let trPanierVide = document.createElement('tr');
-    trPanierVide.innerHTML = `<td id="emptyCart" colspan= 4 class= "text-center">Aucun article n'a été sélectionné</td>`;
-    tBody.appendChild(trPanierVide);
-  }
+     localStorage.removeItem('panier');
+     tBody.innerHTML = "";
+     let trPanierVide = document.createElement('tr');
+     trPanierVide.innerHTML = `<td id="emptyCart" colspan= 4 class= "text-center">Aucun article n'a été sélectionné</td>`;
+     tBody.appendChild(trPanierVide);
+    }
+
   table.appendChild(tBody);
+  }
 
-}
+  // _____________button Annuler________________________
+  function clearCart() {
+    localStorage.removeItem('panier');
+    main.removeChild(divTotalAmount);
+    displayCart();
+  }
 
-// _____________button Annuler________________________
-function clearCart() {
-  localStorage.removeItem('panier');
-  main.removeChild(divTotalAmount);
-  displayCart();
-}
+  //_______________NewSolde______________________________
+  function displayNewSolde() {
+    let divNewDetailsEmployee = document.querySelector('div.user');
+    let newSoldelem = document.querySelector('#solde');
+    newSoldelem.innerHTML = `<p id="solde">Solde : ${newSolde.toFixed(2)} €</p>`;
+    divNewDetailsEmployee.appendChild(newSoldelem);
+  }
 
-//_______________NewSolde______________________________
-function displayNewSolde() {
-  let divNewDetailsEmployee= document.querySelector('div.user');
-  let newSoldelem= document.querySelector('#solde');
-  newSoldelem.innerHTML= `<p id="solde">Solde : ${newSolde.toFixed(2)} €</p>`;
-  divNewDetailsEmployee.appendChild(newSoldelem);
-}
-
-
-// _____________button Valider et régler________________________
-// todo UPDATE STOCK DU PRODUIT & UPDATE SOLDE EMPLOYE
-async function pay() {
-  //POST un array d'Objet
-  tBody.innerHTML = "";
-  let res = await fetch('http://localhost:8081/api/orders/place', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      "Content-Type": "application/json",
-      //'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    //creer un tableau associatif au format json string pour respecter le content-type de l'headers 
-    body: JSON.stringify({
-      "employee": localStorage.getItem('employee'),
-      "products": localStorage.getItem('panier')
-      // From front to back is not secure, so I put these elem below on comments
-      // amount: parseInt(localStorage.getItem('amount')),
-      // newSolde: parseInt(localStorage.getItem('newSolde'))
+  // ______button Valider et régler: check stock produit et solde employe pour update db et display message de response____________
+  async function pay() {
+    //todo__POST un array d'Objet
+    tBody.innerHTML = "";
+    let res = await fetch('http://localhost:8081/api/orders/place', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        "Content-Type": "application/json",
+        //'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      //todo__creer un tableau associatif au format json string pour respecter le content-type de l'headers 
+      body: JSON.stringify({
+        "employee": localStorage.getItem('employee'),
+        "products": localStorage.getItem('panier')
+        // From front to back is not secure, so I put these elem below on comments
+        // amount: parseInt(localStorage.getItem('amount')),
+        // newSolde: parseInt(localStorage.getItem('newSolde'))
+      })
     })
+    //todo__stocker la response return by placeOrder() from back-end
+    let fetchedMessage = await res.json();
+    // console.log(fetchedMessage);
+    tBody.innerHTML = "";
+    tBody.innerHTML = `<td id="emptyCart" colspan= 4 class= "text-center">${fetchedMessage}</td>`;
     
-  })
-  // console.log(res);
-  let fetchedMessage = await res.json();
-  // console.log(fetchedMessage);
-  main.removeChild(divTotalAmount);
-  tBody.innerHTML ="";
-  tBody.innerHTML = `<td id="emptyCart" colspan= 4 class= "text-center">${fetchedMessage}</td>`;
-  displayNewSolde();
-  
-}
+    if (fetchedMessage.status) {
+      clearCart();
+      displayNewSolde();
+      tBody.innerHTML = "";
+      tBody.innerHTML = `<td id="emptyCart" colspan= 4 class= "text-center">${fetchedMessage.message}</td>`;
+      main.removeChild(divTotalAmount);
+      // console.log(fetchedMessage.message)
+    } else {
+      clearCart();
+      tBody.innerHTML = `<td id="emptyCart" colspan= 4 class= "text-center">${fetchedMessage.message}</td>`;
+      // console.log(fetchedMessage.message)
+    }
+  }
 
-// _____________button Historique de cde________________
-async function displayHistoriqueOrders(idEmploye) {
-  let response = await fetch(apiOrderHistory + "?id=" + idEmploye);
-  let ordersHistory = await response.json();
-}
+  // _____________button Historique de cde________________
+  async function displayHistoriqueOrders(idEmploye) {
+    let response = await fetch(apiOrderHistory + "?id=" + idEmploye);
+    let ordersHistory = await response.json();
+  }
 
 
 

@@ -5,38 +5,46 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viennoiserie</title>
+  <title>Menu</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+  
 </head>
 
 <body>
   <!-- ___________________header________________________ -->
-  <header id="employee-header" data-header="viennoiserie">
+  <header>
     <div id="en-tete">
       <img id="logo" src="./assets/img/logo.webp" alt="logo">
+    
       <h1>O'Snack</h1>
+      
     </div>
   </header>
-
-
-
-  <!-- ___________________main________________________  -->
-  <section id="sous-titre">
-    <h2 id="categorie">Viennoiserie</h2>
-    <div id="searchbar">
-      <input data-search type="text" name="searchbar" id="serchInput">
-      <a class="search-link" href="#"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></a>
-    </div>
-  </section>
-
-<!--data-laPartieDuNomDeAttribut est un attribut de données qui permet de stocker des infos suppl -->
-  <main data-produits="viennoiserie">
+  <main data-login="/">
   </main>
-
+  <h2>Connexion</h2>
+	<section id="connexion">
+<!-- navbar -->
+  <ul id="navbarItem">
+    <!--  if !localstorage.login  -->
+      <li class="nav-item">
+        <a class="nav-link" href="#">Connexion</a>
+      </li>
+    <!-- else-->
+      <li class="nav-item">
+        <a class="nav-link" href='./produitsAll.html'>Tous les produits</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href='./home.html'>Produits par catégorie</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href='/monCompte'>Mon Compte</a>
+      </li>
+  </ul>
 
   <!-- ___________________footer________________________  -->
 
@@ -57,8 +65,6 @@
       </li>
     </ul>
   </nav>
-
-  <script src="script.js" async></script>
+</section>
 </body>
-
 </html>

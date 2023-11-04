@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viennoiserie</title>
+  <title>Produits</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -15,26 +15,25 @@
 
 <body>
   <!-- ___________________header________________________ -->
-  <header id="employee-header" data-header="viennoiserie">
-    <div id="en-tete">
+  <header id="employee-header">
+    <div class="leave-button">
+      <div id="en-tete">
       <img id="logo" src="./assets/img/logo.webp" alt="logo">
-      <h1>O'Snack</h1>
+      <h1 id="panier">O'Snack</h1>
+    </div>
+      <a href="#">
+        <button id="menu-button" type="button" class="btn btn-outline-secondary ">
+          <i class="fa-solid fa-bars" style="color: #2f5c7c;"></i>
+        </button>
+      </a>
     </div>
   </header>
 
-
-
   <!-- ___________________main________________________  -->
-  <section id="sous-titre">
-    <h2 id="categorie">Viennoiserie</h2>
-    <div id="searchbar">
-      <input data-search type="text" name="searchbar" id="serchInput">
-      <a class="search-link" href="#"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></a>
-    </div>
-  </section>
+  <h2>Produits</h2>
 
-<!--data-laPartieDuNomDeAttribut est un attribut de données qui permet de stocker des infos suppl -->
-  <main data-produits="viennoiserie">
+  <!--data-laPartieDuNomDeAttribut est un attribut de données qui permet de stocker des infos suppl -->
+  <main data-produits="all">
   </main>
 
 
@@ -43,14 +42,14 @@
   <nav>
     <ul id="navbar">
       <li class="nav-item">
-        <a class="nav-link" href='/menu.html'><i class="fa-solid fa-house" style="color: #2f5c7c; font-size: 30px;"></i></a>
+        <a class="nav-link" href='/'><i class="fa-solid fa-house" style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href='/favorits.html'><i class="fa-solid fa-heart"
             style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
       <li class="nav-item">
-        <a onclick= "" class="nav-link" href='/'><i class="fa-solid fa-user" style="color: #2f5c7c; font-size: 30px;"></i></a>
+        <a onclick= "" class="nav-link" href='/login.html'><i class="fa-solid fa-user" style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
       <li class="nav-item">
         <a onclick= "displayCart()" class="nav-link" href='/panier.html'><i class="fa-solid fa-cart-shopping" style="color: #2f5c7c; font-size: 30px;"></i></a>

@@ -1,74 +1,160 @@
 @font-face {
   font-family: 'Montserrat Alternates';
   src: url('./assets/Fonts/MontserratAlternates-Regular.otf') format('woff'),
-       url('./assets/Fonts/MontserratAlternates-SemiBold.otf') format('woff2');
+    url('./assets/Fonts/MontserratAlternates-SemiBold.otf') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
-html, body{
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat Alternates', sans-serif;
   position: relative;
-  background-color: #F3EDED;
+  background-color: #F3EDED !important;
   overflow: scroll;
 }
-img{
+
+img {
   width: 100%;
 }
+
 /* ___________________header________________________ */
-header{
-  margin: 0.3em 1.5em ;
+header {
+  margin: 1.3em 1.5em;
 }
 
-h1{
+h1,
+h1#panier {
   display: inline-block;
-  margin: 0;
-  padding-left: 0.1em;
-}
-#logo{
-  width: 30%;
-}
-
-.user{
- text-align: right;
-}
-
-.user >p, img{
-  display: inline-block;
-}
-
-.solde >p{
-  display: block;
-  text-align: right;
-  
-}
-
-.solde >p:first-child{
+  padding-left: 0.5em;
+  font-size: 2.5em !important;
   margin-bottom: 0;
 }
 
+#logo {
+  width: 30%;
+}
+
+.user {
+  text-align: right;
+}
+
+.user>p,
+img {
+  display: inline-block;
+}
+
+.solde>p {
+  display: block;
+  text-align: right;
+
+}
+
+.solde>p:first-child {
+  margin-bottom: 0;
+}
+
+.leave-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px auto;
+}
+
+#leave-button {
+  background-color: #bcbcbc;
+  font-size: 1em;
+}
+
+#menu-button {
+  font-size: 1.5em;
+}
+
 /* ___________________footer________________________ */
-nav{
+nav {
   position: static;
   bottom: 0;
   margin: 0 1.5em;
 }
 
-#navbar{
+#navbar {
   display: flex;
   list-style-type: none;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 7px;  
+  padding: 7px;
+  margin-bottom: 0;
+  margin-top: 4em;
+}
+
+/* ___________________mainConnexion________________________ */
+
+/* <!-- navbar --> */
+#connexion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#navbarItem {
+  padding: 0.3em;
+  text-align: center;
+  background-color: #2F5C7C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 5em auto;
+  border-radius: 3%;
+}
+
+.fixed-top {
+  display: flex;
+  flex-direction: column;
+  margin: 5em 0.9em;
+}
+
+.nav-item {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1.5em;
+}
+
+.nav-link {
+  color: #F3EDED;
+  text-decoration: none;
+  font-size: larger;
+}
+
+#form {
+  border: 2px solid #2F5C7C;
+  padding: 1.2em 0.5em;
+  margin: 0 0.5em;
+  background-color: #F3EDED;
+}
+
+#form>label {
+  font-size: small;
+}
+
+#submit {
+  position: relative;
+  left: 35%;
+  padding: 0.5em;
+
 }
 
 
-/* ___________________main________________________ */
 
-h2{
+/* ___________________mainAllProduits________________________ */
+
+h2 {
   text-align: center;
   margin: 0;
 }
@@ -91,11 +177,11 @@ h2{
   position: relative;
 }
 
-.boxProduit > img {
+.boxProduit>img {
   width: 60%;
-} 
+}
 
-.btnAcheter{
+.btnAcheter {
   border: 1px solid #2F5C7C;
   border-radius: 11%;
   width: 60%;
@@ -105,11 +191,12 @@ h2{
   font-weight: bold;
   cursor: pointer;
 }
+
 .btnAcheter:disabled {
-  cursor:not-allowed;
+  cursor: not-allowed;
 }
 
-.btnAjouter{
+.btnAjouter {
   background-color: #2F5C7C;
   color: #F3EDED;
   font-size: 18px;
@@ -117,20 +204,20 @@ h2{
   cursor: pointer;
 }
 
-.flex{
+.flex {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-top: 1.5em;
 }
 
-.designation{
+.designation {
   margin-top: 0;
   margin-bottom: 1em;
   font-size: 20px;
 }
 
-.epuise{
+.epuise {
   margin-top: 7px;
   font-size: 20px;
   color: red;
@@ -138,46 +225,47 @@ h2{
   font-weight: bold;
 }
 
-.toggle{
+.toggle {
   font-size: 20px;
   position: absolute;
   right: 0.5em;
   top: 0.5em;
 }
 
-.colorToggle{
-  color:#990000;
+.colorToggle {
+  color: #990000;
 }
 
-.btnHidden{
+.btnHidden {
   display: none;
 }
 
 /* ___________________mainCategory________________________ */
-#sous-titre{
+#sous-titre {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   box-sizing: border-box;
+  margin: 1em auto;
 }
 
-#sous-titre >h2{
+#sous-titre>h2 {
   letter-spacing: 0.2em;
 }
 
-#searchbar{
+#searchbar {
   margin-top: 0.8em;
   text-align: center;
   width: 100%;
 }
 
-#searchInput{
+#searchInput {
   height: 28px;
   width: 55%;
   position: relative;
 }
 
-#searchbar > a{
+#searchbar>a {
   position: absolute;
   right: 28.5%;
   padding: 2.5px 0;
@@ -185,45 +273,53 @@ h2{
   color: #000;
   font-size: 17px;
 }
+
 /* #searchInput.value{
   text-align: center;
 } */
 
 /*_______________________________MAINchoiceCategory___________________________*/
-h2 >span{
+h2>span {
   letter-spacing: 0.1em;
 }
 
-#viennoiseries, #boissons{
+#choiceCategory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#viennoiseries,
+#boissons {
   text-align: center;
   margin-top: 1em;
   letter-spacing: 0.2em;
 }
 
-#boissons{
+#boissons {
   margin-bottom: 1em;
 }
 
-.boxShadow{
-  width: 65%;
+.boxShadow {
+  width: 75%;
   background-color: #2F5C7C;
   box-shadow: 0px 2px 4px 2px #2F5C7C;
   border-radius: 10px;
 }
 
 /*_______________________________MAINcart___________________________*/
-.right{
+.right {
   text-align: right;
   margin-right: 1em;
   font-weight: bold;
   font-size: 18px;
 }
 
-.right >span{
+.right>span {
   font-weight: normal;
 }
 
-.cartBtn{
+.cartBtn {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -231,7 +327,8 @@ h2 >span{
   box-sizing: border-box;
 }
 
-.actionBtn{
+.actionBtn,
+#submit {
   border: none;
   border-radius: 7%;
   box-shadow: 3px 2px 3px rgba(47, 92, 124, 1.25);
@@ -242,7 +339,7 @@ h2 >span{
   font-weight: 600;
 }
 
-.redCentered{
+.redCentered {
   text-align: center;
   color: #ed1313;
 }
@@ -252,7 +349,7 @@ h2 >span{
   opacity: 0.4;
 }
 
-.orange{
+.orange {
   color: orange;
   font-weight: bold;
 }

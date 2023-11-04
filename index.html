@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produits</title>
+  <title>Connexion</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+
 </head>
 
 <body>
@@ -18,34 +19,48 @@
   <header>
     <div id="en-tete">
       <img id="logo" src="./assets/img/logo.webp" alt="logo">
+
       <h1>O'Snack</h1>
+
     </div>
   </header>
-
-  
-
-  <!-- ___________________main________________________  -->
-  <h2>Produits</h2>
-
-  <!--data-laPartieDuNomDeAttribut est un attribut de données qui permet de stocker des infos suppl -->
-  <main data-produits="all">
+  <main data-login="/">
   </main>
+  <h2>Connexion</h2>
+  <article class="fixed-top">
+    <form id="form" action="#" method="post">
+      <div>
+        <label for="mail">Identifiant :</label>
+        <input type="mail" name="email" id="mail" placeholder="adresse.mail@online.fr"><br><br>
+      </div>
+      <div>
+        <label for="password">Mot de passe :</label>
+        <input type="password" name="password" id="password" placeholder="********"><br><br>
+      </div>
 
+      <input type="submit" name="submit" id="submit" value="Se connecter">
+
+    </form>
+  </article>
 
   <!-- ___________________footer________________________  -->
 
   <nav>
     <ul id="navbar">
       <li class="nav-item">
-        <a class="nav-link" href='/home.html'><i class="fa-solid fa-house" style="color: #2f5c7c; font-size: 30px;"></i></a>
+        <a class="nav-link" href='/menu.html'><i class="fa-solid fa-house" style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href='/favorits.html'><i class="fa-solid fa-heart"
             style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
-
       <li class="nav-item">
-        <a ontap= "displayCart()" class="nav-link" href='/contact.html'><a class="nav-link" href='/panier.html'><i class="fa-solid fa-cart-shopping" style="color: #2f5c7c; font-size: 30px;"></i></a>
+        <a onclick="" class="nav-link" href='/'><i class="fa-solid fa-user"
+            style="color: #2f5c7c; font-size: 30px;"></i></a>
+      </li>
+      <li class="nav-item">
+        <a onclick="displayCart()" class="nav-link" href='/panier.html'><i class="fa-solid fa-cart-shopping"
+            style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
     </ul>
   </nav>

@@ -15,14 +15,19 @@
 
 <body>
   <!-- ___________________header________________________ -->
-  <header id="employee-header" data-header='choiceCategory'>
-    <div id="en-tete">
+  <header id="employee-header">
+    <div class="leave-button">
+      <div id="en-tete">
       <img id="logo" src="./assets/img/logo.webp" alt="logo">
-      <h1>O'Snack</h1>
+      <h1 id="panier">O'Snack</h1>
+    </div>
+      <!-- <a href="#">
+        <button id="menu-button" type="button" class="btn btn-outline-secondary ">
+          <i class="fa-solid fa-bars" style="color: #2f5c7c;"></i>
+        </button>
+      </a> -->
     </div>
   </header>
-
-
 
   <!-- ___________________mainchoiceCategory________________________  -->
   <h2>Produits - <span>Categories</span></h2>
@@ -48,20 +53,26 @@
   <nav>
     <ul id="navbar">
       <li class="nav-item">
-        <a class="nav-link" href='#'><i class="fa-solid fa-house"
+        <a class="nav-link" href='/menu.html'><i class="fa-solid fa-house" style="color: #2f5c7c; font-size: 30px;"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href='/favorits.html'><i class="fa-solid fa-heart"
             style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href='/favorits'><i class="fa-solid fa-heart"
-            style="color: #2f5c7c; font-size: 30px;"></i></a>
+        <a onclick= "" class="nav-link" href='/'><i class="fa-solid fa-user" style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
-
       <li class="nav-item">
-        <a ontap= "displayCart()" class="nav-link" href='/contact.html'><a class="nav-link" href='/panier.html'><i class="fa-solid fa-cart-shopping" style="color: #2f5c7c; font-size: 30px;"></i></a>
+        <a onclick= "displayCart()" class="nav-link" href='/panier.html'><i class="fa-solid fa-cart-shopping" style="color: #2f5c7c; font-size: 30px;"></i></a>
       </li>
     </ul>
   </nav>
+
+  
+  <script src="script.js" async></script>
+</body>
+
+</html>
 
   <script src="script.js" async></script>
 </body>
